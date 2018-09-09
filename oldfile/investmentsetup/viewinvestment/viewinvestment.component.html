@@ -1,0 +1,130 @@
+  
+   
+           <!-- Begin page -->
+           <div id="wrapper">
+   
+            <app-sidebar></app-sidebar>
+
+            
+
+           <!-- Start right Content here -->
+
+           <div class="content-page">
+               <!-- Start content -->
+               <div class="content">
+
+                    <app-topbar></app-topbar>
+
+                   <div class="page-content-wrapper " style="min-height:750px">
+
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-md-12 col-xl-12">
+                                <h4 class="text-muted text-center font-18"><b>View Investment</b></h4>
+                                <p></p><p></p>
+                                <div class="p-3">
+                              <form class="form-horizontal m-t-20" id="ninvform"  name="ninvform" class="default-form" #ninvform="ngForm">
+                                <div *ngIf="newInvErr" class="alert alert-danger alert-dismissible">
+                                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                  <h4><i class="icon fa fa-ban"></i> Error!</h4>
+                                 <span >{{newInvErr}}</span>
+                                 
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-3 pull-right">Investment Account:</label>
+                                      
+                                      <div class="col-3">
+                                          <input id="invAcct" name="invAcct" [(ngModel)]="newInvData.invAcct" #invAcct="ngModel" class="form-control" type="text" required="" placeholder="Investment Account">
+                                      </div>
+                                      <div class=" col-3">
+                                          <button type="button"   (click)="getCust(newInvData)"  class="btn btn-primary" >seacrh&nbsp;<i class="fa fa-arrow-circle-o-right"></i></button>
+                                  </div> 
+                                  <div class="col-3">
+                                  {{newInvData.custname}}   
+                                  </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-3 pull-right">Investment Product:</label>
+                                          
+                                          <div class="col-3">
+                                            <select class="form-control" id="invProduct" name="invProduct" [(ngModel)]="newInvData.invProduct" #invProduct="ngModel"> 
+                                                <option>Select</option>
+                                                <option value="Mr">Mr</option>
+                                                <option value="Mrs">Mrs</option>
+                                                <option value="Miss">Miss</option>
+                                            </select>     
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-3">Investment Rate:</label>
+                                          <div class="col-3">
+                                              {{newInvData.invRate}} &nbsp;&#37;
+                                          </div>
+                                         
+                                          
+                                      </div>
+                                      <div class="form-group row">
+                                        <label class="col-3 pull-right">Investment Tenor:</label>
+                                          
+                                          <div class="col-3">
+                                            <select class="form-control" (change)="invchange()" id="invTenor" name="invTenor" [(ngModel)]="newInvData.invTenor" #invTenor="ngModel"> 
+                                                <option>Select</option>
+                                                <option value="30">Mr</option>
+                                                <option value="60">Mrs</option>
+                                                <option value="90">Miss</option>
+                                            </select>     
+                                        </div>
+                                    </div>
+                                        <div class="form-group row">
+                                            <label class="col-3 pull-right">Investment Amount:</label>
+                                               
+                                              <div class="col-3">
+                                                  <input (change)="invAmntchng()" id="invAmount" name="invAmount" [(ngModel)]="newInvData.invAmount" #invAmount="ngModel" class="form-control" type="text" required="" placeholder="Investment Amount">
+                                              </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-3">Investment Date:</label>
+                                              <div class="col-3">
+                                                  <input (change)="invchange()" id="invDate" name="invDate" [(ngModel)]="newInvData.invDate" #invDate="ngModel" class="form-control"  type="date"  >
+                                                 
+                                              </div>
+                                              <label class="col-3">Maturity Date:</label>
+                                              <div class="col-3">
+                                            {{newInvData.maturityDate}}      
+                                            </div>
+                                              
+                                          </div>
+                                          <div class="form-group row">
+                                            <label class="col-3">Return on Investment:</label>
+                                              <div class="col-3">
+                                                &#8358;&nbsp;{{newInvData.roi}}
+                                              </div>
+                                             
+                                              
+                                          </div>
+          
+                                            <div class="form-group text-center row m-t-20">
+                                                <div class="col-12">
+                                                    <button (click)="chngPass(passData)" class="btn btn-info btn-block waves-effect waves-light" type="button">Book Investment</button>
+                                                </div>
+                                            </div>
+                              </form>
+                            </div>          
+                            </div>
+                          </div>        
+                         
+
+
+                   </div> <!-- Page content Wrapper -->
+
+               </div> <!-- content -->
+
+               <app-dashfooter></app-dashfooter>
+              
+
+           </div>
+           <!-- End Right content here -->
+
+       </div>
+       <!-- END wrapper -->
+       

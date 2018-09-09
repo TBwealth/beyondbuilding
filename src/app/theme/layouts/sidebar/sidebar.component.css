@@ -1,0 +1,14 @@
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
+
+ul.list-unstyled{
+    background: #626c84;
+}
+
+#sidebar-menu ul ul a {
+    color: rgba(245, 246, 248, 0.8);
+    display: block;
+    padding: 12px 25px 12px 60px;
+    font-size: 14px;
+    font-weight: bolder;
+}
+

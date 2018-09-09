@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+input, select, textarea{
+    background: #fff;
+}
+.btn-sm {
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+}

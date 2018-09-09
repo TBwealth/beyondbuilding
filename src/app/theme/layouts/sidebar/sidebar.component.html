@@ -1,0 +1,146 @@
+ <!-- ========== Left Sidebar Start ========== -->
+ <div class="left side-menu">
+    <button type="button" class="button-menu-mobile button-menu-mobile-topbar open-left waves-effect">
+        <i class="ion-close"></i>
+    </button>
+
+    <perfect-scrollbar style="max-width: 600px; max-height: 1100px;" [config]="config">
+
+    <div>
+    <!-- LOGO -->
+    <div class="topbar-left" style="padding-left: 10px">
+        <div class="text-center">
+            <!--<a href="index.html" class="logo">Admiry</a>-->
+            <a href="dashbord" class="logo"><img src="../assets/images/logo-1.png" alt="logo"></a>
+        </div>
+    </div>
+
+    <div class="sidebar-inner slimscrollleft">
+
+        <div class="user-details">
+            <div class="text-center">
+                <img src="assets/images/users/avatar-6.jpg" alt="" class="rounded-circle">
+            </div>
+            <div class="user-info">
+                <h4 class="font-16">Steven Meyers</h4>
+                <span class="text-muted user-status">
+                  <i class="fa fa-dot-circle-o text-success"></i> Online</span>
+            </div>
+        </div>
+
+        <div id="sidebar-menu">
+            <ul>
+                <li class="menu-title">Main</li>
+
+                <li>
+                    <a routerLink="/user/dashboard" class="waves-effect">
+                        <i class="ti-home"></i>
+                        <span> Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="has_sub">
+                    <a  class="waves-effect"  (click)="CsetupCollapsed =!CsetupCollapsed" [attr.aria-expanded]="!CsetupCollapsed" aria-controls="CsetupCollapsedInv">
+                            <i class="fa fa-window-restore"></i> <span> Customer Setup </span> <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="list-unstyled" id="CsetupCollapsedInv" [collapse]="CsetupCollapsed">
+                        <li><a routerLink="/user/createnewcustomer">Add New</a></li>
+                        <li><a href="#">View Account</a></li>                            
+                        <li><a href="#">Verify</a></li> 
+                    </ul>
+                </li>
+                <li class="has_sub">
+                 <a  class="waves-effect"  (click)="invSetCollapsed =!invSetCollapsed" [attr.aria-expanded]="!invSetCollapsed" aria-controls="invSetCollapsedInv">
+                        <i class="fa fa-credit-card-alt"></i> <span> Investment Setup </span> <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                 <ul class="list-unstyled" id="invSetCollapsedInv" [collapse]="invSetCollapsed">
+                     <li><a href="newinvestmentsetup">Add New</a></li>
+                     <li><a href="viewinvestment">View Account</a></li>                            
+                     <li><a href="verifyinvestment">Verify</a></li> 
+                 </ul>
+             </li>
+               
+                <li class="has_sub">
+                    <a  class="waves-effect"  (click)="trfCollapsed =!trfCollapsed" [attr.aria-expanded]="!trfCollapsed" aria-controls="trfCollapsedInv">
+                            <i class="fa fa-money"></i> <span> Fund Transfer </span> <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="list-unstyled" id="trfCollapsedInv" [collapse]="trfCollapsed">
+                        <li><a href="newtransaction">New Transaction</a></li>
+                        <li><a href="modifytransaction">Modify Transaction</a></li>
+                        <li><a href="verifytransaction">Verify Transaction</a></li>
+                    </ul>
+                </li>
+                <li class="has_sub">
+                 <a  class="waves-effect"  (click)="inquireCollapsed =!inquireCollapsed" [attr.aria-expanded]="!inquireCollapsed" aria-controls="inquireCollapsedInv">
+                        <i class="fa fa-search"></i><span> Inquiry </span> <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                 <ul class="list-unstyled" id="inquireCollapsedInv" [collapse]="inquireCollapsed">
+                     <li><a href="transactioninquiry">Transaction Inquiry</a></li>
+                     <li><a href="accountinquiry">Account Inquiry</a></li>
+                     <li><a href="#">Audit Trail</a></li>
+                 </ul>
+             </li>
+             <li class="has_sub">
+                <a  class="waves-effect"  (click)="productCollapsed =!productCollapsed" [attr.aria-expanded]="!productCollapsed" aria-controls="productCollapsedInv">
+                  <i class="fa fa-cube"></i> <span> Product </span> <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="list-unstyled" id="productCollapsedInv" [collapse]="productCollapsed">
+                    <li><a href="addnewproduct">Add New Product</a></li>
+                    <li><a href="modifyproduct">Modify Product</a></li>
+                    <li><a href="viewproduct">View Product</a></li>
+                    <li><a href="verifyproduct">Verify</a></li>
+                </ul>
+            </li>
+            <li class="has_sub">
+                <a  class="waves-effect"  (click)="iAccountCollapsed =!iAccountCollapsed" [attr.aria-expanded]="!iAccountCollapsed" aria-controls="iAccountCollapsedInv">
+                  <i class="fa fa-database"></i> <span> Internal Account </span> <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="list-unstyled" id="iAccountCollapsedInv" [collapse]="iAccountCollapsed">
+                    <li><a href="newinternalaccount">Create New</a></li>
+                    <li><a href="modifyinternalaccount">Modify Account</a></li>
+                    <li><a href="viewinternalaccount">View Account</a></li>
+                    <li><a href="verifyinternalaccount">Verify</a></li>
+                </ul>
+            </li>
+            <li class="has_sub">
+                <a  class="waves-effect"  (click)="terminalCollapsed =!terminalCollapsed" [attr.aria-expanded]="!terminalCollapsed" aria-controls="terminalCollapsedInv">
+                        <i class="fa fa-terminal"></i> <span> Terminals </span> <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="list-unstyled" id="terminalCollapsedInv" [collapse]="terminalCollapsed">
+                    <li><a href="newterminal">Create New</a></li>
+                    <li><a href="modifyterminal">Modify Terminal</a></li>
+                    <li><a href="viewterminal">View Terminal</a></li>
+                    <li><a href="verifyterminal">Verify</a></li>
+                </ul>
+            </li>
+            <li class="has_sub">
+                <a  class="waves-effect"  (click)="freezeCollapsed =!freezeCollapsed" [attr.aria-expanded]="!freezeCollapsed" aria-controls="freezeCollapsedInv">
+                        <i class="fa fa-assistive-listening-systems"></i> <span> Freeze </span> <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="list-unstyled" id="freezeCollapsedInv" [collapse]="freezeCollapsed">
+                    <li><a href="freezesetup">Create New</a></li>
+                  
+                    <li><a href="verifyfreeze">Verify</a></li>
+                </ul>
+            </li>
+            <li class="has_sub">
+                <a  class="waves-effect"  (click)="userCollapsed =!userCollapsed" [attr.aria-expanded]="!userCollapsed" aria-controls="userCollapsedInv">
+                  <i class="fa fa-user-o"></i> <span> Users </span> <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="list-unstyled" id="userCollapsedInv" [collapse]="userCollapsed">
+                    <li><a href="createnewuser">Add New</a></li>
+                    <li><a href="modifyuser">Modify User</a></li>
+                    <li><a href="viewuser">view user</a></li>
+                    <li><a href="verifyuser">Verify</a></li>
+                </ul>
+            </li>
+                <li>
+                   <a href="changepassword" class="waves-effect">
+                     <i class="fa fa-exchange"></i><span> Change Password </span></a>
+               </li>
+               <li>
+                   <a href="signout" class="waves-effect" (click)="logout()">
+                     <i class="fa fa-power-off"></i><span> Signout </span></a>
+               </li>
+               
+
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div> <!-- end sidebarinner -->
+    
+    </div>
+</perfect-scrollbar>
+</div>
+<!-- Left Sidebar End -->

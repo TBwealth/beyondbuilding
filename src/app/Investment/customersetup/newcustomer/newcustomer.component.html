@@ -1,0 +1,317 @@
+ <!-- Begin page -->
+
+ <div class="wrapper-page">
+    
+     <div class="card">
+      
+         <div class="card-body">
+               
+             <h4 class="text-muted text-center font-18"><b>Create New user</b></h4>
+          
+             <div class="p-3">
+
+                 <form class="form-horizontal m-t-20" id="regform"  name="regform" class="default-form" #regform="ngForm">
+                        <div *ngIf="newRegErr" class="alert alert-danger alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <h4><i class="icon fa fa-ban"></i> Error!</h4>
+                               <span >{{newRegErr}}</span>
+                               
+                              </div>
+            
+                              <div *ngIf="newregSuccess" class="alert alert-success alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <h4><i class="icon fa fa-check"></i> Success!</h4>
+                               <span >{{newregSuccess}}</span>
+                               
+                              </div>
+                    <tabset #staticTabs>
+                        <tab heading="General Details">
+                            <div class="p-3">
+                                <div class="form-group row">
+                                    <label class="col-3">Tittle</label>
+                                      <div class="col-3">
+                    <select class="form-control" id="custtitle" name="custtitle" [(ngModel)]="regData.custtitle" #custtitle="ngModel"> 
+                                              <option>Select</option>
+                                              <option value="Mr">Mr</option>
+                                              <option value="Mrs">Mrs</option>
+                                              <option value="Miss">Miss</option>
+                                          </select>
+                                      </div>
+                                      <div class="col-6">
+                                          <input id="custsurname" name="custsurname" [(ngModel)]="regData.custsurname" #custsurname="ngModel" class="form-control" type="text" required="" placeholder="Surname">
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-6">
+                                            <input id="custfirstname" name="custfirstname" [(ngModel)]="regData.custfirstname" #custfirstname="ngModel" class="form-control" type="text" required="" placeholder="Firstname">
+                                        </div>
+                                        <div class="col-6">
+                                            <input id="custothername" name="custothername" [(ngModel)]="regData.custothername" #custothername="ngModel" class="form-control" type="text" required="" placeholder="Othernames">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label class="col-3">Marital Status:</label>
+                                        <div class="col-3">
+                                            <select id="custmstatus" name="custmstatus" [(ngModel)]="regData.custmstatus" #custmstatus="ngModel" class="form-control">
+                                                <option>Select</option>
+                                                <option value="Single">Single</option>
+                                                <option value="Married">Married</option>
+                                                <option value="Divorced">Divorced</option>
+                                            </select>
+                                        </div>
+                                        <label class="col-3">Gender:</label>
+                                        <div class="col-3">
+                                            <select id="custgender" name="custgender" [(ngModel)]="regData.custgender" #custgender="ngModel" class="form-control">
+                                                <option>Select</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group row">
+                                      <label class="col-3">Date of Birth:</label>
+                                        <div class="col-4">
+                                            <input id="custdob" name="custdob" [(ngModel)]="regData.custdob" #custdob="ngModel" class="form-control"  type="date"  >
+                                           
+                                        </div>
+                                        <div class="col-5">
+                                            <input id="custstateorigin" name="custstateorigin" [(ngModel)]="regData.custstateorigin" #custstateorigin="ngModel" class="form-control" type="text" required="" placeholder="State of origin">
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-12">
+                                            <input id="custreligion" name="custreligion" [(ngModel)]="regData.custreligion" #custreligion="ngModel" class="form-control" type="text" required="" placeholder="Religion">
+                                        </div>
+                                    </div>
+                            </div>
+                            <div style="vertical-align:bottom; border-top:solid 1px #ccc;padding:10px">
+                                    <button type="button"   (click)="selectTab(1)"  class="btn btn-primary pull-right" >next&nbsp;<i class="fa fa-arrow-circle-o-right"></i></button>
+                            </div> 
+
+                        </tab>
+                        <tab heading="Contact">
+                          <div class="p-3">
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <input id="custaddress" name="custaddress" [(ngModel)]="regData.custaddress" #custaddress="ngModel" class="form-control" type="text" required="" placeholder="Contact address">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-6">
+                                    <input id="custemail" name="custemail" [(ngModel)]="regData.custemail" #custemail="ngModel" class="form-control" type="email" required="" placeholder="Email Address">
+                                </div>
+                                <div class="col-6">
+                                    <input id="custphonenumber" name="custphonenumber" [(ngModel)]="regData.custphonenumber" #custphonenumber="ngModel" class="form-control" type="text" required="" placeholder="Phone Number">
+                                </div>
+                            </div>
+                            </div>
+                             
+                            <div style="vertical-align:bottom; border-top:solid 1px #ccc;padding:10px">
+                                    <button type="button"   (click)="selectTab(0)"  class="btn btn-primary " ><i class="fa fa-arrow-circle-o-left"></i>&nbsp;back</button>
+                                    
+                                <button type="button"   (click)="selectTab(2)"  class="btn btn-primary pull-right" >next&nbsp;<i class="fa fa-arrow-circle-o-right"></i></button>
+                            </div>
+                              
+                          
+                        </tab>
+                        <tab heading="Identity">
+                            <div class="p-3">
+                                <div class="form-group row">
+                                    <label class="col-3">Valid I.d. Card:</label>
+                                      <div class="col-3">
+                                          <select id="custidcard" name="custidcard" [(ngModel)]="regData.custidcard" #custidcard="ngModel" class="form-control">
+                                              <option>Select</option>
+                                              <option value="Drivers License">Drivers License</option>
+                                              <option value="International Passport">International Passport</option>
+                                              <option value="Voters Card">Voters Card</option>
+                                              <option value="National Identity Card">National Identity Card</option>
+                                          </select>
+                                      </div>
+                                      <div class="col-6">
+                        <input id="custidcardnumber" name="custidcardnumber" [(ngModel)]="regData.custidcardnumber" #custidcardnumber="ngModel" class="form-control" type="text" required="" placeholder="Id Card Number">
+                                      </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label class="col-3">I.d. Issued date:</label>
+                                      <div class="col-3">
+                                          <input id="custidcardissued" name="custidcardissued" [(ngModel)]="regData.custidcardissued" #custidcardissued="ngModel" class="form-control" type="date" required="" >
+                                      </div>
+                                      <label class="col-3">I.d. Expiry date:</label>
+                                      <div class="col-3">
+                                          <input id="custidcardexpiry" name="custidcardexpiry" [(ngModel)]="regData.custidcardexpiry" #custidcardexpiry="ngModel" class="form-control" type="date" required="" >
+                                      </div>
+                                  </div>
+                            </div>
+                            <div style="vertical-align:bottom; border-top:solid 1px #ccc;padding:10px">
+                                    <button type="button"   (click)="selectTab(1)"  class="btn btn-primary " ><i class="fa fa-arrow-circle-o-left"></i>&nbsp;back</button>
+                                    
+                                <button type="button"   (click)="selectTab(3)"  class="btn btn-primary pull-right" >next&nbsp;<i class="fa fa-arrow-circle-o-right"></i></button>
+                            </div>
+                        </tab>
+                        <tab heading="Next of Kin">
+                            <div class="p-3">
+                                <div class="form-group row">
+                                    
+                                      <div class="col-6">
+                                          <input id="custnextkinname" name="custnextkinname" [(ngModel)]="regData.custnextkinname" #custnextkinname="ngModel" class="form-control" type="text" required="" placeholder="Next of Kin Name">
+                                      </div>
+                                      <div class="col-6">
+                                          <input id="customernextkinrel" name="customernextkinrel" [(ngModel)]="regData.customernextkinrel" #customernextkinrel="ngModel" class="form-control" type="text" required="" placeholder="Next of Kin Relationship">
+                                      </div>
+                                  </div>
+                                  <div class="form-group row">
+                                      
+                                        <div class="col-12">
+                                            <input id="custnextkinaddress" name="custnextkinaddress" [(ngModel)]="regData.custnextkinaddress" #custnextkinaddress="ngModel" class="form-control" type="text" required="" placeholder="Next of Kin Address">
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group row">
+                                        
+                                          <div class="col-6">
+                                              <input id="customernextkindob" name="customernextkindob" [(ngModel)]="regData.customernextkindob" #customernextkindob="ngModel" class="form-control" type="date" required="" placeholder="Next of Kin dob">
+                                          </div>
+                                          <div class="col-6">
+                                              <input id="customernextkinphone" name="customernextkinphone" [(ngModel)]="regData.customernextkinphone" #customernextkinphone="ngModel" class="form-control" type="text" required="" placeholder="Next of Kin Phone number">
+                                          </div>
+                                      </div>
+                            </div>
+                            <div style="vertical-align:bottom; border-top:solid 1px #ccc;padding:10px">
+                                    <button type="button"   (click)="selectTab(2)"  class="btn btn-primary " ><i class="fa fa-arrow-circle-o-left"></i>&nbsp;back</button>
+                                    
+                                <button type="button"   (click)="selectTab(4)"  class="btn btn-primary pull-right" >next&nbsp;<i class="fa fa-arrow-circle-o-right"></i></button>
+                            </div>
+                        </tab>
+                        <tab heading="Upload Passport">
+                                <h4 class="text-muted text-center font-18"><b>Upload Passport</b></h4>
+                                <div class="p-3">
+                                    <div class="row">
+                                            <div class="col-8">
+                                                    <div class="form-group row">
+                                                            <div class="col-12">
+                                                                <file-drop headertext="Drop files here to upload" (onFileDrop)="dropped($event,workingmodal)" 
+                                                                (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+                                                                    <span></span>
+                                                                </file-drop>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-12">
+                                                                <input type="file"  (change)="onFileChange($event,workingmodal)"  multiple>
+                                                            </div>
+                                            </div>
+                                            </div>
+                                            <div class="col-4">
+                                                
+                                    <div class="col-12">
+                                            <img class="img-thumbnail" alt="200x200" src="{{imgupldavatar}}" data-holder-rendered="true">
+                                            <input id="custpassport" name="custpassport" [(ngModel)]="regData.custpassport" #custpassport="ngModel" class="form-control" type="hidden" required="" >
+                                            
+                                        </div>    
+                                </div>
+                                    </div>
+                                
+                                  </div>
+                                  <div style="vertical-align:bottom; border-top:solid 1px #ccc;padding:10px">
+                                        <button type="button"   (click)="selectTab(3)"  class="btn btn-primary " ><i class="fa fa-arrow-circle-o-left"></i>&nbsp;back</button>
+                                        
+                                    <button type="button"   (click)="selectTab(5)"  class="btn btn-primary pull-right" >next&nbsp;<i class="fa fa-arrow-circle-o-right"></i></button>
+                                </div>
+                        </tab>
+                        <tab heading="login details">
+                            <div class="p-3">
+                                    <div class="form-group row">
+                                            
+                                              <div class="col-12">
+                                                  <input id="custusername" name="custusername" [(ngModel)]="regData.custusername" #custusername="ngModel" class="form-control" type="text" required="" placeholder="Username">
+                                              </div>
+                                              
+                                          </div>
+                                          <div class="form-group row">
+                                                
+                                                  <div class="col-12">
+                                                      <input id="custpassword" name="custpassword" [(ngModel)]="regData.custpassword" #custpassword="ngModel" class="form-control" type="password" required="" placeholder="Password">
+                                                  </div>
+                                                  
+                                              </div>
+                                              <div class="form-group row">
+                                                    
+                                                      <div class="col-12">
+                                                          <input id="custpasswordconf" name="custpasswordconf" [(ngModel)]="regData.custpasswordconf" #custpasswordconf="ngModel" class="form-control" type="password" required="" placeholder="Confirm Password">
+                                                      </div>
+                                                      
+                                                  </div>
+                                <div class="form-group row">
+                                    <div class="col-12">
+                                        <div class="custom-control custom-checkbox">
+                                            <input id="accepttermsandcond" name="accepttermsandcond" [(ngModel)]="regData.accepttermsandcond" #accepttermsandcond="ngModel" type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <label class="custom-control-label font-weight-normal" for="customCheck1">I accept <a href="#" class="text-muted">Terms and Conditions</a></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group text-center row m-t-20">
+                                    <div class="col-12">
+                                        <button (click)="regClient(regData,workingmodal)" class="btn btn-info btn-block waves-effect waves-light" type="button">Register</button>
+                                    </div>
+                                </div>
+           
+                                
+                            </div>
+                            <div style="vertical-align:bottom; border-top:solid 1px #ccc;padding:10px">
+                                    <button type="button"   (click)="selectTab(4)"  class="btn btn-primary " ><i class="fa fa-arrow-circle-o-left"></i>&nbsp;back</button>
+                                    
+                               </div>
+                        </tab>
+                      
+                      </tabset>
+                              
+                      <div class="form-group m-t-10 mb-0 row">
+                            <div class="col-12 m-t-20 text-center">
+                                <a href="login" class="text-muted">Already have account?</a>
+                            </div>
+                        </div>
+
+                     
+
+                     
+                 </form>
+             </div>
+
+         </div>
+     </div>
+ </div>
+
+ <ng-template #workingmodal>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">Working...</h4>
+         
+        </div>
+        <div class="modal-body">
+            <div>
+    <img src="../assets/images/preload.gif" class="rounded mx-auto d-block" style="width:100%;height:100%"  alt="logo">
+    
+           </div>
+           <div *ngIf="mdok">
+                <button type="button"   (click)="decline()"  class="btn btn-primary text-center" >ok</button>
+                
+           </div>
+        </div>
+      </ng-template>
+
+ <script src="../assets/js/app.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,105 @@
+  
+   
+           <!-- Begin page -->
+           <div id="wrapper">
+   
+              <app-sidebar></app-sidebar>
+  
+              
+  
+             <!-- Start right Content here -->
+  
+             <div class="content-page">
+                 <!-- Start content -->
+                 <div class="content">
+  
+                      <app-topbar></app-topbar>
+  
+                     <div class="page-content-wrapper " style="min-height:750px">
+  
+                          <div class="container-fluid">
+                              <h4 class="text-muted text-center font-18"><b>Transaction Inquiry</b></h4>
+                              <p></p><p></p>
+                              <div class="form-group row">
+                                  <label class="col-3 pull-right">Enter Transaction Id:</label>
+                                    
+                                    <div class="col-3">
+                                        <input id="acctdebitnumb" name="acctdebitnumb" [(ngModel)]="newTranData.acctdebitnumb" #acctdebitnumb="ngModel" class="form-control" type="text" required="" placeholder="Transaction Id">
+                                    </div>
+                                    <div class=" col-3">
+                                        <button type="button"   (click)="getCust(newTranData)"  class="btn btn-primary" >seacrh&nbsp;<i class="fa fa-arrow-circle-o-right"></i></button>
+                                </div> 
+                                
+                                  </div>
+                            <div class="row">
+                              <div class="col-12">
+                                  <div class="card m-b-30">
+                                      <div class="card-body">
+  
+                                      <div id="datatable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
+                                        
+                                                <div class="row">
+                                                  <div class="col-sm-12">
+                                                  <table  class="table table-bordered dataTable no-footer" >
+                                              <thead>
+                                                  <tr >
+                                                      <th class="sorting_asc" style="width: 251px;">Date</th>
+                                                      <th class="sorting_asc" style="width: 251px;">Account Number</th>
+                                                      <th class="sorting_asc" style="width: 251px;">Account Name</th>
+                                                      <th class="sorting_asc" style="width: 251px;">Naration</th>
+                                                      <th class="sorting_asc" style="width: 251px;">Credit</th>
+                                                      <th class="sorting_asc" style="width: 251px;">Debit</th>
+                                                      <th class="sorting_asc" style="width: 251px;">Processor</th>
+                                                      <th class="sorting_asc" style="width: 251px;">Aprroved by</th>
+                                                      <th class="sorting_asc" style="width: 251px;">Status</th>
+                                                      <th>Balance</th>
+                                                      
+                                                      
+                                                    </tr>
+                                              </thead>
+  
+  
+                                              <tbody>
+                                                  <tr *ngFor="let client of clients" role="row" class="even">
+                                                      <td>{{client.name}}</td>
+                                                      <td>{{client.gender}}</td>
+                                                      <td>{{client.company}}</td>
+                                                      <td>{{client.name}}</td>
+                                                      <td>{{client.gender}}</td>
+                                                      <td>{{client.company}}</td>
+                                                      <td>{{client.name}}</td>
+                                                      <td>{{client.gender}}</td>
+                                                      <td>{{client.company}}</td>
+                                                      <td>{{client.company}}</td>
+                                                    </tr>                                             
+                                            </tbody>
+                                          </table>
+                                        </div>
+                                      </div>
+                                          
+                                        </div>
+  
+                                      </div>
+                                  </div>
+                              </div> <!-- end col -->
+                          </div>        
+                                              
+                            
+                                  
+                          </div>
+  
+  
+                     </div> <!-- Page content Wrapper -->
+  
+                 </div> <!-- content -->
+  
+                 <app-dashfooter></app-dashfooter>
+                
+  
+             </div>
+             <!-- End Right content here -->
+  
+         </div>
+         <!-- END wrapper -->
+         
+  

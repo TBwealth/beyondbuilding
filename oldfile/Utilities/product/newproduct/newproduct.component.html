@@ -1,0 +1,111 @@
+  
+   
+           <!-- Begin page -->
+           <div id="wrapper">
+   
+              <app-sidebar></app-sidebar>
+  
+              
+  
+             <!-- Start right Content here -->
+  
+             <div class="content-page">
+                 <!-- Start content -->
+                 <div class="content">
+  
+                      <app-topbar></app-topbar>
+  
+                     <div class="page-content-wrapper " style="min-height:750px">
+  
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-md-12 col-xl-12">
+                                  <h4 class="text-muted text-center font-18"><b>New Product Setup</b></h4>
+                                  <p></p><p></p>
+                                  <div class="p-3">
+                                <form class="form-horizontal m-t-20" id="ninvform"  name="ninvform" class="default-form" #ninvform="ngForm">
+                                  <div *ngIf="newInvErr" class="alert alert-danger alert-dismissible">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                    <h4><i class="icon fa fa-ban"></i> Error!</h4>
+                                   <span >{{newInvErr}}</span>
+                                   
+                                  </div>
+                                  <div class="form-group row">
+                                      <label class="col-2 pull-right">Title:</label>
+                                        
+                                        <div class="col-4">
+                                            <input id="custid" name="custid" [(ngModel)]="newInvData.custid" #custid="ngModel" class="form-control" type="text" required="" placeholder="Title">
+                                        </div>
+                                        
+                                      </div>
+                                      <div class="form-group row">
+                                          <label class="col-2 pull-right">Description:</label>
+                                            
+                                            <div class="col-4">
+                                                <textarea id="custid" name="custid" [(ngModel)]="newInvData.custid" #custid="ngModel" class="form-control" type="text" required="" placeholder="Description">
+                                                </textarea>
+                                            </div>
+                                            
+                                          </div>
+                                          <div class="form-group row">
+                                              <label class="col-2 pull-right">Rate:</label>
+                                                 
+                                                <div class="col-4">
+                                                    <input (change)="invAmntchng()" id="invAmount" name="invAmount" [(ngModel)]="newInvData.invAmount" #invAmount="ngModel" class="form-control" type="text" required="" placeholder="Rate">
+                                                </div>
+                                                
+                                          </div>
+                                      <div class="form-group row">
+                                          <label class="col-2 pull-right">Tenor:</label>
+                                            
+                                            <div class="col-4">
+                                              <select class="form-control" id="invProduct" name="invProduct" [(ngModel)]="newInvData.invProduct" #invProduct="ngModel"> 
+                                                  <option>Select</option>
+                                                  <option value="Mr">Mr</option>
+                                                  <option value="Mrs">Mrs</option>
+                                                  <option value="Miss">Miss</option>
+                                              </select>     
+                                          </div>
+                                          <div class=" col-3">
+                                              <button type="button"   (click)="getCust(newInvData)"  class="btn btn-sm btn-primary" >Add</button>
+                                      </div>
+                                      </div>                                      
+                                          <div class="form-group row">
+                                              <label class="col-2 pull-right">Default Charges:</label>
+                                                 
+                                                <div class="col-4">
+                                                    <input (change)="invAmntchng()" id="invAmount" name="invAmount" [(ngModel)]="newInvData.invAmount" #invAmount="ngModel" class="form-control" type="text" required="" placeholder="Default Charges">
+                                                </div>
+                                          </div>
+                                          
+                                            
+            
+                                              <div class="form-group text-center row m-t-20">
+                                                  <div class="col-12">
+                                                      <button (click)="chngPass(passData)" class="btn btn-info btn-block waves-effect waves-light" type="button">Book Investment</button>
+                                                  </div>
+                                              </div>
+                                </form>
+                              </div>          
+                              </div>
+                            </div>        
+                                              
+                                  
+                                  
+                          </div>
+  
+  
+                     </div> <!-- Page content Wrapper -->
+  
+                 </div> <!-- content -->
+  
+                 <app-dashfooter></app-dashfooter>
+                
+  
+             </div>
+             <!-- End Right content here -->
+  
+         </div>
+         <!-- END wrapper -->
+         
+  

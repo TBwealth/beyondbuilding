@@ -1,0 +1,216 @@
+
+   
+                       <div class="page-content-wrapper " style="min-height:750px">
+   
+                            <div class="container-fluid">
+                                    
+                                                                <div class="row">
+                                                                    <div class="col-md-6 col-xl-4">
+                                                                        <div class="mini-stat clearfix bg-info">
+                                                                            <span class="mini-stat-icon bg-light"><i class="mdi mdi-cash-multiple text-danger"></i></span>
+                                                                            <div class="mini-stat-info text-right text-white">
+                                                                                <span class="counter text-danger">0</span>
+                                                                                TOTAL INCOMES
+
+                                                                            </div>
+                                                                            <p class="mb-0 m-t-20 text-white">Receivables: 0   </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xl-4">
+                                                                        <div class="mini-stat clearfix bg-danger">
+                                                                            <span class="mini-stat-icon bg-light"><i class="mdi mdi-cash text-success"></i></span>
+                                                                            <div class="mini-stat-info text-right text-white">
+                                                                                <span class="counter text-white">0</span>
+                                                                                TOTAL EXPENSES
+                                                                            </div>
+                                                                            <p class="mb-0 m-t-20 text-white">Payables : 0 </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xl-4">
+                                                                        <div class="mini-stat clearfix bg-success">
+                                                                            <span class="mini-stat-icon bg-light"><i class="mdi mdi-cube-outline text-warning"></i></span>
+                                                                            <div class="mini-stat-info text-right text-white">
+                                                                                <span class="counter text-warning">0</span>
+                                                                                TOTAL PROFIT
+                                                                            </div>
+                                                                            <p class="mb-0 m-t-20 text-white">Upcoming: 0 
+                                                                               </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                    
+                                   
+                                    
+                                                                <div class="row">
+                                                                        <div class="col-xl-12">
+                                                                                <div class="card m-b-30">
+                                                                                    <div class="card-body">
+                                                                                        <div class="container">
+                                                                                                <div class="row text-center">
+                                                                                                   <div class="col-md-12">
+                                                                                                      <h2 class="section-title"><span>Cash Flow</span></h2>
+                                                                                                   </div>
+                                                                                                   <!-- Col End -->
+                                                                                                </div>
+                                                                                                <div class="row">
+                                                                                                   <div class="col-lg-12">
+                                                                                                        <canvas id="canvas">{{ linechart }}</canvas>
+                                                                                                  <div *ngIf="chart">
+                                                                                                     
+                                                                                                  </div>
+                                                                                                </div>
+                                                                                             </div>
+                                            
+                                                                                        </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            </div>
+                                      
+                                    
+                                                                   
+                                    
+                                                                </div>
+                                                                <!-- end row -->
+                                    
+                                                                <div class="row">
+                                                                    <div class="col-xl-4">
+                                                                        <div class="card m-b-30">
+                                                                            <div class="card-body">
+                                                                                <h4 class="mt-0 m-b-15 header-title">Incomes By Category</h4>
+                                                                                <div class="row">
+                                                                                        <div class="col-lg-12">
+                                                                                                <div class="card m-b-30">
+                                                                                                    <div class="card-body">
+                                                            
+                                                                                                        <div class="media">
+                                                                                                          
+                                                                                                        </div>
+                                                            
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                </div>
+                                                                               
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4">
+                                                                        <div class="card m-b-30">
+                                                                            <div class="card-body">
+                                                                                <h4 class="mt-0 m-b-15 header-title">Expenses By Category</h4>
+                                                                                <div class="row">
+                                                                                        <div class="col-lg-12">
+                                                                                                <div class="card m-b-30">
+                                                                                                    <div class="card-body">
+                                                            
+                                                                                                        <div class="media">
+                                                                                                          
+                                                                                                        </div>
+                                                            
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                </div>
+                                                                               
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4">
+                                                                        <div class="card m-b-30">
+                                                                            <div class="card-body">
+                                                                                <h4 class="mt-0 m-b-15 header-title">Incomes By Terminal</h4>
+                                                                                <div class="row">
+                                                                                        <div class="col-lg-12">
+                                                                                                <div class="card m-b-30">
+                                                                                                    <div class="card-body">
+                                                            
+                                                                                                        <div class="media">
+                                                                                                          
+                                                                                                        </div>
+                                                            
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                </div>
+                                                                               
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4">
+                                            <div class="card m-b-30">
+                                                <div class="card-body">
+                                                    <h4 class="mt-0 m-b-15 header-title">Account Balances</h4>
+                                                    <div class="row">
+                                                            <div class="col-lg-12">
+                                                                    <div class="card m-b-30">
+                                                                        <div class="card-body">
+                                
+                                                                            <div class="media">
+                                                                              
+                                                                            </div>
+                                
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                    </div>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4">
+                                            <div class="card m-b-30">
+                                                <div class="card-body">
+                                                    <h4 class="mt-0 m-b-15 header-title">Latest Expenses</h4>
+                                                    <div class="row">
+                                                            <div class="col-lg-12">
+                                                                    <div class="card m-b-30">
+                                                                        <div class="card-body">
+                                
+                                                                            <div class="media">
+                                                                               
+                                                                            </div>
+                                
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                    </div>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4">
+                                            <div class="card m-b-30">
+                                                <div class="card-body">
+                                                    <h4 class="mt-0 m-b-15 header-title">Latest Incomes</h4>
+                                                    <div class="row">
+                                                            <div class="col-lg-12">
+                                                                    <div class="card m-b-30">
+                                                                        <div class="card-body">
+                                
+                                                                            <div class="media">
+                                                                             
+                                                                            </div>
+                                
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                    </div>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    
+                                                            </div>
+   
+   
+                       </div> <!-- Page content Wrapper -->
+   
+           
+           <!-- END wrapper -->
+           

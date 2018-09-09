@@ -1,0 +1,199 @@
+  
+   
+           <!-- Begin page -->
+           <div id="wrapper">
+   
+              <app-sidebar></app-sidebar>
+  
+              
+  
+             <!-- Start right Content here -->
+  
+             <div class="content-page">
+                 <!-- Start content -->
+                 <div class="content">
+  
+                      <app-topbar></app-topbar>
+  
+                     <div class="page-content-wrapper " style="min-height:750px">
+  
+                          <div class="container-fluid">
+                              <h4 class="text-muted text-center font-18"><b>Account Inquiry</b></h4>
+                              <p></p><p></p>
+                              <div class="row bg-success" style="padding:20px" >
+                                <div class="col-6 col-md-6">
+                                    <div class="row">
+                                        <label class="col-6">Customers Name</label>
+                                        <div class="col-6 col-md-6">
+        
+                                        </div>
+                                        </div>
+                                        
+                                        <div class="row">
+                                        <label class="col-6">Product Type</label>
+                                        <div class="col-6 col-md-6">
+        
+                                        </div>
+                                        </div>
+                                        
+                                        <div class="row">
+                                        <label class="col-6">Rate</label>
+                                        <div class="col-6 col-md-6">
+        
+                                          </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <label class="col-6">Account Status</label>
+                                            <div class="col-6 col-md-6">
+            
+                                              </div>
+                                            </div>
+
+                                    </div>
+                                        <div class="col-6 col-md-6">
+                                          <div class="row">
+                                            <label class="col-6">Account Number</label>
+                                            <div class="col-6 col-md-6">
+            
+                                            </div>
+                                          </div>
+                                          
+                                          <div class="row">
+                                        <label class="col-6">Tenor</label>
+                                        <div class="col-6 col-md-6">
+        
+                                        </div>
+                                          </div>
+
+
+                                          <div class="row">
+                                        <label class="col-6">Maturity Date</label>
+                                        <div class="col-6 col-md-6">
+        
+                                        </div>
+                                        </div>
+
+                                        </div>
+                                </div>
+
+                                <div class="row" style="padding: 10px;">
+                                    <div class="col-12 col-md-12"  ></div>
+                                  </div>
+                                
+                              <div class="form-group row">
+                                  <label class="col-2 pull-right">Search Querry:</label>
+                                    
+                                    <div class="col-3">
+                                        <input id="acctdebitnumb" name="acctdebitnumb" [(ngModel)]="newTranData.acctdebitnumb" #acctdebitnumb="ngModel" class="form-control" type="text" required="" placeholder="Account Number/Name">
+                                    </div>
+                                    <div class="col-2">
+                                        <input id="acctdebitnumb" name="acctdebitnumb" [(ngModel)]="newTranData.acctdebitnumb" #acctdebitnumb="ngModel" class="form-control" type="date" required="" >
+                                    </div>
+                                    <div class="col-2">
+                                        <input id="acctdebitnumb" name="acctdebitnumb" [(ngModel)]="newTranData.acctdebitnumb" #acctdebitnumb="ngModel" class="form-control" type="date" required="" >
+                                    </div>
+                                    <div class=" col-2">
+                                        <button type="button"   (click)="getCust(newTranData)"  class="btn btn-primary" >seacrh&nbsp;<i class="fa fa-arrow-circle-o-right"></i></button>
+                                </div> 
+                                
+                                  </div>
+
+                                  <div class="row" style="padding: 5px;">
+                                      <div class="col-12 col-md-12"  style="border: solid 1px;"></div>
+                                    </div>
+
+                                    <div class="row" style="padding-left:5px;">
+                                        <label class="col-3"><i>statement period from</i></label>
+                                        <div class="col-2 col-md-2">
+        
+                                        </div>
+                                        <label class="col-1"><i>to</i></label>
+                                        <div class="col-4 col-md-4">
+        
+                                          </div>
+                                        </div>
+
+                                    <div class="row" style="padding: 5px;">
+                                        <div class="col-12 col-md-12"  style="border: solid 1px;"></div>
+                                      </div>
+
+
+                            <div class="row">
+                              <div class="col-12">
+                                  <div class="card m-b-30">
+                                      <div class="card-body">
+  
+                                      <div id="datatable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
+                                        
+                                                <div class="row">
+                                                  <div class="col-sm-12">
+                                                  <table  class="table table-bordered dataTable no-footer" >
+                                              <thead>
+                                                  <tr >
+                                                      <th class="sorting_asc" style="width: 251px;">Date</th>
+                                                      <th class="sorting_asc" style="width: 251px;">Reference</th>
+                                                      <th class="sorting_asc" style="width: 251px;">Description</th>
+                                                      <th class="sorting_asc" style="width: 251px;">Deposit</th>
+                                                      <th class="sorting_asc" style="width: 251px;">Withdrawal</th>
+                                                      <th class="sorting_asc" style="width: 251px;">Balance</th>
+                                                     
+                                                      
+                                                    </tr>
+                                              </thead>
+  
+  
+                                              <tbody>
+                                                  <tr *ngFor="let client of clients" role="row" class="even">
+                                                      <td>{{client.name}}</td>
+                                                      <td>{{client.gender}}</td>
+                                                      <td>{{client.company}}</td>
+                                                      <td>{{client.name}}</td>
+                                                      <td>{{client.gender}}</td>
+                                                      <td>{{client.company}}</td>
+                                                      </tr>                                             
+                                            </tbody>
+                                          </table>
+                                        </div>
+                                      </div>
+                                          
+                                        </div>
+  
+                                      </div>
+                                  </div>
+                              </div> <!-- end col -->
+                          </div>        
+                                              
+                          <div class="row" style="padding: 5px;">
+                              <div class="col-12 col-md-12"  style="border: solid 1px;"></div>
+                            </div>
+
+                            <div class="row" style="padding-left:5px;">
+                                
+                                <div class="col-12 col-md-12">
+                                    <h4>CUSTOMERS OTHER ACCOUNTS</h4>
+                                </div>
+                              
+                            </div>
+
+                            <div class="row" style="padding: 5px;">
+                                <div class="col-12 col-md-12"  style="border: solid 1px;"></div>
+                              </div>
+                                  
+                          </div>
+  
+  
+                     </div> <!-- Page content Wrapper -->
+  
+                 </div> <!-- content -->
+  
+                 <app-dashfooter></app-dashfooter>
+                
+  
+             </div>
+             <!-- End Right content here -->
+  
+         </div>
+         <!-- END wrapper -->
+         
+  

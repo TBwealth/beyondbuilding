@@ -1,0 +1,123 @@
+  
+   
+           <!-- Begin page -->
+           <div id="wrapper">
+   
+            <app-sidebar></app-sidebar>
+
+            
+
+           <!-- Start right Content here -->
+
+           <div class="content-page">
+               <!-- Start content -->
+               <div class="content">
+
+                    <app-topbar></app-topbar>
+
+                   <div class="page-content-wrapper " style="min-height:750px">
+
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-md-12 col-xl-12">
+                                <h4 class="text-muted text-center font-18"><b>Modify Users Record</b></h4>
+                                <p></p><p></p>
+                                <div class="p-3">
+                              <form class="form-horizontal m-t-20" id="ninvform"  name="ninvform" class="default-form" #ninvform="ngForm">
+                                <div *ngIf="newInvErr" class="alert alert-danger alert-dismissible">
+                                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                  <h4><i class="icon fa fa-ban"></i> Error!</h4>
+                                 <span >{{newInvErr}}</span>
+                                 
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-2 pull-right">Staff Name:</label>
+                                      
+                                    <div class="col-4">
+                                      <select (change)="invAmntchng()" id="invAmount" name="invAmount" [(ngModel)]="newInvData.invAmount" #invAmount="ngModel" class="form-control">
+                                        <option>user</option>
+                                        <option>superuser</option>
+                                        <option>Admin</option>  
+                                        </select>
+                                    </div>
+                                      
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-2 pull-right">Staff Id:</label>
+                                          
+                                        <div class="col-4">
+                                            <input (change)="invAmntchng()" id="invAmount" name="invAmount" [(ngModel)]="newInvData.invAmount" #invAmount="ngModel" class="form-control" type="text" required="" placeholder="Staff Id">
+                                        </div>
+                                          
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-2 pull-right">Email:</label>
+                                               
+                                              <div class="col-4">
+                                                  <input (change)="invAmntchng()" id="invAmount" name="invAmount" [(ngModel)]="newInvData.invAmount" #invAmount="ngModel" class="form-control" type="text" required="" placeholder="Email">
+                                              </div>
+                                              
+                                        </div>
+                                                                       
+                                        <div class="form-group row">
+                                            <label class="col-2 pull-right">Username:</label>
+                                               
+                                              <div class="col-4">
+                                                  <input (change)="invAmntchng()" id="invAmount" name="invAmount" [(ngModel)]="newInvData.invAmount" #invAmount="ngModel" class="form-control" type="text" required="" placeholder="Username">
+                                              </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-2 pull-right">Role:</label>
+                                               
+                                              <div class="col-4">
+                                                  <select (change)="invAmntchng()" id="invAmount" name="invAmount" [(ngModel)]="newInvData.invAmount" #invAmount="ngModel" class="form-control">
+                                                  <option>user</option>
+                                                  <option>superuser</option>
+                                                  <option>Admin</option>  
+                                                  </select> 
+                                              </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                          <label class="col-2 pull-right">Status:</label>
+                                             
+                                            <div class="col-4">
+                                                <select (change)="invAmntchng()" id="invAmount" name="invAmount" [(ngModel)]="newInvData.invAmount" #invAmount="ngModel" class="form-control">
+                                                <option>Enabled</option>
+                                                <option>Disabled</option>
+                                              
+                                                </select> 
+                                            </div>
+                                      </div>
+                                        
+                                          
+          
+                                            <div class="form-group text-center row m-t-20">
+                                                <div class="col-12">
+                                                    <button (click)="chngPass(passData)" class="btn btn-info btn-block waves-effect waves-light" type="button">Modify Record</button>
+                                                </div>
+                                            </div>
+                              </form>
+                            </div>          
+                            </div>
+                          </div>        
+                                            
+                                
+                                
+                        </div>
+
+
+                   </div> <!-- Page content Wrapper -->
+
+               </div> <!-- content -->
+
+               <app-dashfooter></app-dashfooter>
+              
+
+           </div>
+           <!-- End Right content here -->
+
+       </div>
+       <!-- END wrapper -->
+       
+
